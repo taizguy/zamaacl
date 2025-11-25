@@ -1,5 +1,4 @@
-import React from "react";
-import { useAsset } from "../hooks/useAsset";
+import { useAsset } from "../hooks/useAssets";
 import { AssetFallback } from "./AssetFallback";
 
 export function SFX({ src }: { src: string }) {

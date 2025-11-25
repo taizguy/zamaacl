@@ -5,7 +5,7 @@ export function useAsset(path: string, type: "image" | "audio" | "json") {
     const [data, setData] = useState<any>(null);
 
     useEffect(() => {
-        const fullPath = process.env.PUBLIC_URL + path;
+        const fullPath = `${import.meta.env.BASE_URL}${path}`;
 
         async function load() {
             try {
