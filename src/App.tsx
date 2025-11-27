@@ -178,11 +178,12 @@ export default function App() {
   const selectedCipherData = ciphertexts.find((c) => c.id === selectedCipher);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-black to-slate-900 text-white p-6">
+    <div className="">
       <AnimatePresence mode="wait">
         {stage === "landing" ? (
           <motion.div key="landing" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <div className="flex items-center justify-center min-h-screen">
+           <div className="flex items-center justify-center min-h-screen">
+            <div className="flex items-center justify-center">
               <motion.div 
                 className="max-w-2xl bg-gradient-to-br from-yellow-400 via-amber-300 to-yellow-500 p-12 rounded-2xl shadow-2xl text-slate-950"
                 initial={{ scale: 0.8, opacity: 0 }}
@@ -226,6 +227,7 @@ export default function App() {
                 </motion.button>
               </motion.div>
             </div>
+            </div>
           </motion.div>
         ) : (
           <motion.div key="demo" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -238,28 +240,29 @@ export default function App() {
               >
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-                  <h1 className="text-4xl font-bold bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent">
-                    Zama ACL Protocol
+                  <h1 className="text-4xl font-bold">
+                  Zama ACL Protocol
                   </h1>
-                </div>
-                <p className="text-yellow-200/80">
-                  Interactive ciphertext & permission management
+                
+                <p className="">
+                  (Interactive ciphertext & permission management)
                 </p>
+                </div>
               </motion.header>
 
               {/* Tutorial Guide */}
               {showTutorial && (
                 <motion.div 
-                  className="mb-8 p-6 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border-2 border-yellow-400/50 rounded-lg"
+                  className="mb-8 p-6 border-2 border-yellow-400/50 rounded-lg"
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-xl font-bold text-yellow-400">📖 How to Use This Demo</h3>
+                    <h3 className="text-xl font-bold text-red-400">📖 How to Use This Demo</h3>
                     <motion.button
                       onClick={() => setShowTutorial(false)}
-                      className="text-yellow-400 hover:text-yellow-300 font-bold"
+                      className="text-yellow-400 hover:text-red-300 font-bold"
                       whileHover={{ scale: 1.2 }}
                     >
                       ✕
@@ -269,7 +272,7 @@ export default function App() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                     {/* Step 1 */}
                     <motion.div 
-                      className="p-4 bg-slate-800/50 rounded border-l-4 border-green-500"
+                      className="p-4 bg-black rounded border-l-4 border-green-500"
                       initial={{ x: -20, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.2 }}
@@ -286,7 +289,7 @@ export default function App() {
 
                     {/* Step 2 */}
                     <motion.div 
-                      className="p-4 bg-slate-800/50 rounded border-l-4 border-blue-500"
+                      className="p-4 bg-black rounded border-l-4 border-blue-500"
                       initial={{ x: -20, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.3 }}
@@ -302,7 +305,7 @@ export default function App() {
 
                     {/* Step 3 */}
                     <motion.div 
-                      className="p-4 bg-slate-800/50 rounded border-l-4 border-cyan-500"
+                      className="p-4 bg-black rounded border-l-4 border-cyan-500"
                       initial={{ x: -20, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.4 }}
@@ -320,7 +323,7 @@ export default function App() {
 
                     {/* Step 4 */}
                     <motion.div 
-                      className="p-4 bg-slate-800/50 rounded border-l-4 border-yellow-500"
+                      className="p-4 bg-black rounded border-l-4 border-yellow-500"
                       initial={{ x: -20, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.5 }}
@@ -338,7 +341,7 @@ export default function App() {
 
                   {/* Key Concepts */}
                   <motion.div 
-                    className="mt-4 p-4 bg-slate-800/50 rounded border-l-4 border-purple-500"
+                    className="mt-4 p-4 bg-black rounded border-l-4 border-purple-500"
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.6 }}
